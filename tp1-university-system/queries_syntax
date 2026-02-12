@@ -1,0 +1,67 @@
+-- Q1
+SELECT last_name, first_name, email, level FROM students;
+-- Q2
+SELECT last_name, first_name, email, specialization 
+FROM professors p 
+JOIN departments d ON p.department_id = d.department_id
+WHERE d.department_name = "Computer Science";
+-- Q3
+SELECT course_code, course_name, credits
+FROM courses
+WHERE credits > 5;
+-- Q4
+SELECT student_number, last_name, first_name, email
+FROM students
+WHERE level = "L3";
+-- Q5
+SELECT course_code, course_name, credits, semester
+FROM courses
+WHERE semester = 1;
+-- Q6
+SELECT c.course_code, c.course_name, p.last_name, p.first_name
+FROM courses c
+JOIN professors p ON c.professor_id = s.professor_id;
+-- Q7
+SELECT s.last_name, s.first_name, c.course_name, e.enrollment_date, e.status
+FROM enrollments e
+JOIN students s ON s.student_id = e.student_id
+JOIN courses c ON c.course_id = e.course_id;
+-- Q8
+SELECT s.last_name, s.first_name, d.department_name, s.level
+FROM students s
+JOIN departments d ON d.department_id = s.department_id;
+-- Q9
+SELECT s.last_name, s.first_name, c.course_name, g.evaluation_type, g.grade
+FROM students s
+JOIN enrollments e ON s.student_id = e.student_id
+JOIN grades g ON g.enrollment_id = e.enrollment_id
+JOIN courses c ON c.course_id = e.course_id;
+-- Q10
+SELECT p.professor_id, p.last_name, p.first_name, COUNT(c.professor_id) AS number_of_courses
+FROM courses c
+JOIN professors p ON p.professor_id = c.professor_id
+GROUP BY p.professor_id, p.last_name, p.first_name;
+-- Q11
+SELECT s.student_id, s.last_name, s.first_name, AVG(g.grade) AS average_grade
+FROM students s
+JOIN enrollments e ON e.student_id = s.student_id
+JOIN grades g ON g.enrollment_id = e.enrollment_id
+GROUP BY s.student_id, s.last_name, s.first_name;
+-- Q12
+SELECT d.department_name, COUNT(s.student_id) AS student_count
+FROM departments d
+LEFT JOIN students s ON d.department_id = s.department_id
+GROUP BY d.department_id, d.department_name;
+-- Q13
+SELECT SUM(budget) AS total_budget
+FROM departments;
+-- Q14
+SELECT d.department_id, d.department_name, COUNT(c.course_id)
+FROM departments d
+LEFT JOIN courses c ON c.department_id = d.department_id
+GROUP BY d.department_id, d.department_name;
+-- Q15
+SELECT d.department_id, d.department_name, AVG(p.salary) AS average_salary
+FROM professors p
+JOIN departments d ON p.department_id = d.department_id
+GROUP BY d.department_id, d.department_name;
