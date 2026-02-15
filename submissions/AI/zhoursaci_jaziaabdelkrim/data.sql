@@ -1,3 +1,5 @@
+-- NOTE : we worked with SQLite
+
 --departements
 INSERT INTO departments (department_name, building, budget, departmnt_head, creation_date) VALUES
   ('Computer Science', 'Building A', 500000, 'Mr. NESRAOUI', '15-06-2023'),
