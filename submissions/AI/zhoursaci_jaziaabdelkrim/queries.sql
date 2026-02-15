@@ -205,7 +205,7 @@ SELECT c.course_name, COUNT(g.grade_id) AS total_grades,
 			ROUND( 100.0 * SUM(CASE WHEN g.grade >= 10 THEN 1 ELSE 0 END) / COUNT(g.grade_id), 2) AS pass_rate_percentage
 FROM courses c
 JOIN enrollments e ON c.course_id = e.course_id
-JOIN grades g ON e.enrollments ON e.enrollment_id = g.enrollment_id
+JOIN grades g ON e.enrollment_id = g.enrollment_id
 GROUP BY c.course_id;
 
 -- Q27
@@ -221,7 +221,7 @@ ORDER BY average_grade DESC;
 -- Q28
 SELECT c.course_name, g.evaluation_type, g.grade, g.coefficient,
 			(g.grade * g.coefficient) AS weighted_grade
-FROM enrollment e
+FROM enrollments e
 JOIN courses c ON e.course_id = c.course_id
 JOIN grades g ON e.enrollment_id = g.enrollment_id
 WHERE e.student_id = 1;
