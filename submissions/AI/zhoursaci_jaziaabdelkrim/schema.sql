@@ -30,7 +30,7 @@ CREATE TABLE students (
     address           TEXT,
     department_id     INTEGER REFERENCES departments(department_id) ON DELETE SET NULL ON UPDATE CASCADE,
     level             TEXT CHECK (level IN ('L1', 'L2', 'L3', 'M1', 'M2')),
-    enrollement_date  DATETIME DEFAULT CURRENT_DATE
+    enrollment_date  DATETIME DEFAULT CURRENT_DATE
 );
 
 CREATE TABLE courses (
