@@ -1,5 +1,5 @@
 -- University Management System
-
+-- NOTE : we worked with SQLite
 -- ========== PART 1: BASIC QUERIES (Q1-Q5) ==========
 
 -- Q1
