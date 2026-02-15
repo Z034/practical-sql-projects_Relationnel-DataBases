@@ -19,7 +19,7 @@ INSERT INTO professors (last_name, first_name, email, phone, departement_id, hir
 
 
 --students
-INSERT INTO students (student_number, last_name, first_name, date_of_birth, email, phone, address, departement_id, level, enrollement_date) VALUES
+INSERT INTO students (student_number, last_name, first_name, date_of_birth, email, phone, address, departement_id, level, enrollment_date) VALUES
   ('232335678904', 'Zhour', 'SACI', '10-10-2004', 'az.saci@ensta.edu.dz', '0123456789', 'batna-algeria', 1, 'L3', '26-08-2023'),
   ('232367930261', 'Jazia', 'ABDELKRIM', '03-04-2005', 'aj.abdelkrim@ensta.edu.dz', '9012345678', 'bousaada-algeria', 1, 'L3', '06-08-2023'),
   ('222282905539', 'Aya', 'ZEDDOUN', '23-7-2002', 'aa.zeddouni@ensta.edu.dz', '8901234567', 'telemcen-algeria', 3, 'M1', '14-08-2022'),
@@ -44,7 +44,7 @@ INSERT INTO courses (course_code, course_name, description, credits, semester, d
 
 
 --enrollements
-INSERT INTO enrollements (student_id, course_id, enrollement_date, academic_year, status) VALUES
+INSERT INTO enrollments (student_id, course_id, enrollment_date, academic_year, status) VALUES
   (1, 1, '13-01-2026', '2025-2026', 'In Progress'),
   (1, 2, '27-09-2025', '2025-2026', 'Passed'),
   (8, 3, '29-09-2025', '2024-2025', 'Passed'),
