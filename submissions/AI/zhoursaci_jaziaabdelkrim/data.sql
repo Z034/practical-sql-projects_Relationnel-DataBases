@@ -1,5 +1,5 @@
 --departements
-INSERT INTO departements (departement_name, building, budget, departement_head, creation_date) VALUES
+INSERT INTO departments (department_name, building, budget, departemnt_head, creation_date) VALUES
   ('Computer Sience', 'Building A', 500000, 'Mr. NESRAOUI', '15-06-2023'),
   ('Mathematics', 'Building B', 350000, 'Mrs. MEGUEDMI', '03-05-2013'),
   ('Physics', 'Building C', 400000, 'MR. MOUGARI', '13-07-2010'),
@@ -8,7 +8,7 @@ INSERT INTO departements (departement_name, building, budget, departement_head, 
 
 
 --professors
-INSERT INTO professors (last_name, first_name, email, phone, departement_id, hire_date, salary, specialization) VALUES
+INSERT INTO professors (last_name, first_name, email, phone, department_id, hire_date, salary, specialization) VALUES
   ('Djamila', 'BENDOUDA', 'djamila.bendouda@ensta.edu.dz', '1234567890', 1,'12-10-2015', 120000, 'Database'),
   ('Kheira', 'LAKHDARI', 'kheira.lakhdari@ensta.edu.dz', '9012345678', 1,'03-05-2022', 100000, 'Data Sience'),
   ('Amina Fatima Zohra', 'MEDJAHED', 'amina.medjahed@ensta.edu.dz', '8901234567', 1,'25-08-2025', 80000, 'AI'),
@@ -19,7 +19,7 @@ INSERT INTO professors (last_name, first_name, email, phone, departement_id, hir
 
 
 --students
-INSERT INTO students (student_number, last_name, first_name, date_of_birth, email, phone, address, departement_id, level, enrollment_date) VALUES
+INSERT INTO students (student_number, last_name, first_name, date_of_birth, email, phone, address, department_id, level, enrollment_date) VALUES
   ('232335678904', 'Zhour', 'SACI', '10-10-2004', 'az.saci@ensta.edu.dz', '0123456789', 'batna-algeria', 1, 'L3', '26-08-2023'),
   ('232367930261', 'Jazia', 'ABDELKRIM', '03-04-2005', 'aj.abdelkrim@ensta.edu.dz', '9012345678', 'bousaada-algeria', 1, 'L3', '06-08-2023'),
   ('222282905539', 'Aya', 'ZEDDOUN', '23-7-2002', 'aa.zeddouni@ensta.edu.dz', '8901234567', 'telemcen-algeria', 3, 'M1', '14-08-2022'),
@@ -32,7 +32,7 @@ INSERT INTO students (student_number, last_name, first_name, date_of_birth, emai
 
 
 --courses
-INSERT INTO courses (course_code, course_name, description, credits, semester, departement_id, professor_id, max_capacity) VALUES
+INSERT INTO courses (course_code, course_name, description, credits, semester, department_id, professor_id, max_capacity) VALUES
   ('CS101', 'ADB', 'Advanced Databases', 5, 2, 1, 1, 70),
   ('CS102', 'DAS', 'Data Analysis & Data Scinece', 6, 1, 1, 2, 150),
   ('CS103', 'AI', 'Introduction to Artificial Intelligence', 5, 1, 1, 3, 85),
