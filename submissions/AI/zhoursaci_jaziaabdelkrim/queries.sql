@@ -108,7 +108,7 @@ WHERE e.enrollment_id IS NULL;
 -- Q18
 SELECT s.first_name || ' ' || s.last_name AS student_name, COUNT(*) AS curses_passed
 FROM students s
-JOIN enrollements e ON s.student_id = e.student_id
+JOIN enrollments e ON s.student_id = e.student_id
 GROUP BY s.student_id
 HAVING SUM(CASE WHEN e.status != 'Passed' THEN 1 ELSE 0 END) = 0;
 
@@ -120,16 +120,16 @@ GROUP BY p.professor_id
 HAVING COUNT(c.course_id) > 2;
 
 -- Q20
-SELECT s.first_name || ' ' || s.last_name AS student_name, COUNT(e.course_id) AS nb_enrollements
+SELECT s.first_name || ' ' || s.last_name AS student_name, COUNT(e.course_id) AS nb_enrollments
 FROM students s
-JOIN enrollements e ON s.student_id = e.student_id
+JOIN enrollments e ON s.student_id = e.student_id
 GROUP BY s.student_id
 HAVING COUNT(e.course_id) > 2;
 
 -- ========== PART 5: SUBQUERIES (Q21-Q25) ==========
 
 -- Q21
-SELECT student_name, student_avg, departement_avg
+SELECT student_name, student_avg, department_avg
 FROM (
     SELECT s.student_id, s.department_id, s.first_name || ' ' || s.last_name AS student_name,
         AVG(g.grade) AS student_avg
@@ -139,14 +139,14 @@ FROM (
     GROUP BY s.student_id
 ) student_data
 JOIN (
-    SELECT s.department_id, AVG(g.grade) AS departement_avg
+    SELECT s.department_id, AVG(g.grade) AS department_avg
     FROM students s
     JOIN enrollments e ON s.student_id = e.student_id
     JOIN grades g ON e.enrollment_id = g.enrollment_id
     GROUP BY s.department_id
-) departement_data
-ON student_data.department_id = departement_data.department_id
-WHERE student_avg > departement_avg;
+) department_data
+ON student_data.department_id = department_data.department_id
+WHERE student_avg > department_avg;
 
 -- Q22
 SELECT course_name, enrollment_nb
