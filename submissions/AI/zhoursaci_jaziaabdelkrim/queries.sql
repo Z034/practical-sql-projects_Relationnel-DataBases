@@ -174,7 +174,7 @@ WHERE d.budget = (
 );
 
 -- Q24
-SELECT s.first_name || ' ' || s.last_name AS student_name, e.email
+SELECT s.first_name || ' ' || s.last_name AS student_name, s.email
 FROM students s
 LEFT JOIN enrollments e ON s.student_id = e.student_id
 LEFT JOIN grades g ON e.enrollment_id = g.enrollment_id
